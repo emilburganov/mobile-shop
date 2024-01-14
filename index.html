@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Mobile Shop</title>
+</head>
+<body>
+<header>
+    <div class="header__container">
+        <a class="header__logo" href="#">
+            Mobile Shop
+            <div></div>
+        </a>
+        <div class="flex g-20 ac">
+            <label>
+                <select id="sortingSelect" class="input">
+                    <option value="date-desc">Сначала новые</option>
+                    <option value="date-asc">Сначала старые</option>
+                    <option value="price-asc">По возрастанию цены</option>
+                    <option value="price-desc">По убыванию цены</option>
+                </select>
+            </label>
+            <label>
+                <input id="searchInput" class="input" type="search" placeholder="Поиск...">
+            </label>
+            <button id="openCartButton" class="button icon fs16rem">
+                🛒
+                <span id="cartCount">0</span>
+            </button>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <div class="f2f5">
+            <div class="card">
+                <form id="filterForm" class="form">
+                    <div class="flex col g-10">
+                        <div class="input-group">
+                            <label>Цена от:</label>
+                            <input id="priceFromInput" class="input" type="number">
+                        </div>
+                        <div class="input-group">
+                            <label>Цена до:</label>
+                            <input id="priceToInput" class="input" type="number">
+                        </div>
+                    </div>
+                    <div class="flex col g-10">
+                        <div class="input-group">
+                            <label>Оперативная память от:</label>
+                            <input id="ramFromInput" class="input" type="number">
+                        </div>
+                        <div class="input-group">
+                            <label>Оперативная память до:</label>
+                            <input id="ramToInput" class="input" type="number">
+                        </div>
+                    </div>
+                    <div class="flex col g-10">
+                        <div class="input-group">
+                            <label>Встроенная память от:</label>
+                            <input id="romFromInput" class="input" type="number">
+                        </div>
+                        <div class="input-group">
+                            <label>Встроенная память до:</label>
+                            <input id="romToInput" class="input" type="number">
+                        </div>
+                    </div>
+                    <div id="companiesCheckboxes" class="flex col g-20"></div>
+                    <div class="flex g-10 ac">
+                        <input id="withDiscountsCheckbox" class="checkbox" type="checkbox">
+                        <label>Со скидками</label>
+                    </div>
+                    <div class="flex g-10">
+                        <button type="submit" class="button flex-w">Найти</button>
+                        <button id="resetButton" type="reset" class="button outlined flex-w">Сбросить</button>
+                    </div>
+                </form>
+            </div>
+            <div class="card-grid"></div>
+        </div>
+    </div>
+</main>
+<div id="modal" class="modal">
+    <div id="modalContainer" class="card modal__container">
+
+        <div class="flex sb g-20 ac">
+            <p class="cart_total">Корзина товаров</p>
+            <button id="modalCloseButton" class="button danger icon">
+                ❌
+            </button>
+        </div>
+        <div id="cartProducts" class="flex col g-20 p-20"></div>
+        <div id="totalTemplate" class="flex col g-20"></div>
+    </div>
+</div>
+<script src="assets/js/index.js"></script>
+</body>
+</html>
